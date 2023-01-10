@@ -110,48 +110,33 @@
 
 
 # 다이얼 문제 
-# alpabet = input()
-# dial="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-# cnt = 0
-# for idx in alpabet:
-#     result = dial.index(idx)
-#     num = (result//3)+3
-    
-#     if   num > 10:
-#         num = 10
-#     cnt += num
+
         
-# print(cnt) 
 # 백준 모범답안
 # dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
 # a = input()
 # ret = 0
-# for j in range(len(a)):
-#     for i in dial:
-#         if a[j] in i:
-#             ret += dial.index(i)+3
+# for j in range(len(a)):   # 입력한 값의 개수 
+#     for i in dial:      #이중 반복문을 통해 
+#         if a[j] in i:   # dial 하나씩 입력한 값의 위치가 맞는다면
+#             ret += dial.index(i)+3 # 이 위치의 +3을 한다
 # print(ret)
+ 
 # 문제 푸는 순서
 # 리스트를 만든 이 위치+3을 한것들을 합친다    
           
            
-#크로아티아 알파벳
-croatia=['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
-alpabet = input()
-_list = [idx for idx in alpabet]
-_join = ''.join(_list)
-print(_list)
-print(_join)
-cnt = 0
-for i in croatia:
-    if _join in i:
-    
-        cnt+=1
-print(cnt)
-    
-    
-
+# 크로아티아 알파벳
+# croatia=['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+# alpabet = input()
+# cnt = 0
+# for i in croatia:
+#     if i in alpabet:
+#         alpabet = alpabet.replace(i,"@")
         
+# print(len(alpabet))
+
+
 
 # 최댓값,최솟값 구하는 코드 (max,min 없이)
 
@@ -166,6 +151,43 @@ print(cnt)
 # print(max1)        
 
 
+#그룹 단어 체커 문제
+words_num = int(input())
+cnt = 0
+_sum = 0  
+for idx in range(words_num):
+    word = input()
+    new  = ''
+    prev = ''
+    for i in word:
+    
+        if len(new)== 0: #첫 문자만 성립
+            new += i
+            prev = i
+        if i == prev: # 문자가 전에꺼랑 같으면 건너뛰기
+            continue
+        else:
+            new += i #두번째 문자에서부터 차근차근 저장 
+            prev = i  #그래서 결국 답은 happy에서 hapy
+      
+    if  len(new)==len(set(new)):
+        cnt += 1
+print(cnt)    
+        
+
+          
+      
+
+        
+            
+    
+
+
+        
+        
+    
+    
+     
 
 
 

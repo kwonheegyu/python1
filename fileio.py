@@ -23,3 +23,4 @@ fd.close()
 fd = open("out.txt","w")
 var = fd.write(input)
 fd.close()
+
